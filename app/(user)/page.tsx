@@ -4,13 +4,32 @@ import { client } from "../../lib/sanity.client";
 import PreviewSuspense from "../../components/preview/PreviewSuspense";
 import BlogList from "../../components/blogs/BlogList";
 import PreviewBlogList from "../../components/preview/PreviewBlogList";
-const query = groq`*[_type == "post"]{
-  ...,
-  author->,
-  categories[]->,
-} | order(_createdAt desc)`;
 
-const HomePage = async ({ props }: any) => {
+// export const revalidate = 30;
+
+// export async function getStaticProps() {
+//   const query = groq`*[_type == "post"]{
+//     ...,
+//     author->,
+//     categories[]->,
+//   } | order(_createdAt desc)`;
+//   const posts = await client.fetch(query);
+
+//   return {
+//     props: {
+//       fetchedPosts: posts,
+//     },
+//   };
+// }
+
+const HomePage = async ({ fetchedPosts }: { fetchedPosts: Post[] }) => {
+  console.log("fetchedPosts", fetchedPosts);
+  const query = groq`*[_type == "post"]{
+    ...,
+    author->,
+    categories[]->,
+  } | order(_createdAt desc)`;
+
   if (previewData()) {
     return (
       <PreviewSuspense
@@ -35,15 +54,3 @@ const HomePage = async ({ props }: any) => {
 };
 
 export default HomePage;
-
-
-export async function getServerSideProps() {
-  const res = await fetch(`http://localhost:3000/api/hello`);
-  const data = await res.json();
-  console.log("data", data);
-  return {
-    props: {
-      data,
-    },
-  };
-}
