@@ -4,6 +4,8 @@ import { PortableText } from "@portabletext/react";
 import { client } from "../../../../lib/sanity.client";
 import urlFor from "../../../../lib/urlFor";
 import PortableTextCustom from "../../../../components/blogs/PortableTextCustom";
+import Link from "next/link";
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
 type Props = {
   params: {
     slug: string;
@@ -20,6 +22,14 @@ const Post = async ({ params: { slug } }: Props) => {
   console.log(post);
   return (
     <article className="px-4 sm:px-10 pb-28 ">
+      {/* go back button */}
+      <Link
+        href="/"
+        className="text-[#f7ab0a] flex items-center hover:opacity-75 mb-4 font-bold"
+      >
+        <ArrowUturnLeftIcon className="h-6 w-6 text-[#f7ab0a] mr-2 font-bolds" />
+        GO BACK
+      </Link>
       <section className="space-y-2 border border-[#f7ab0a] text-white">
         <div className="relative min-h-[224px] flex flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">

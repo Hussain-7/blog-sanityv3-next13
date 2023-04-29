@@ -1,3 +1,6 @@
+import { ArrowUturnLeftIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
+
 const Banner = () => {
   return (
     <div className="flex flex-col lg:flex-row lg:space-x-5 lg:items-center justify-between font-bold px-4 sm:px-10 py-5 mb-10">
@@ -16,7 +19,7 @@ const Banner = () => {
         nightmare & More!
       </p>
     </div>
-);
+  );
 };
 
 export default Banner;

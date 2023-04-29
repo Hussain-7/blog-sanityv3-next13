@@ -36,7 +36,6 @@ const HomePage = async ({ props }: any) => {
 
 export default HomePage;
 
-// using getServerSideProps call /api/hello and pass data in props
 
 export async function getServerSideProps() {
   const res = await fetch(`http://localhost:3000/api/hello`);
