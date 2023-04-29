@@ -5,13 +5,13 @@ import urlFor from "../lib/urlFor";
 type Props = {
   post: Post;
 };
-const Blog = ({ post }: Props) => {
+const BlogCard = ({ post }: Props) => {
   return (
     <div>
       <div className="flex flex-col group cursor-pointer">
         <div
           className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 
-	transition-transform duration-200 ease-out"
+	         transition-transform duration-200 ease-out"
         >
           {" "}
           <Image
@@ -61,4 +61,4 @@ const Blog = ({ post }: Props) => {
   );
 };
 
-export default Blog;
+export default BlogCard;
