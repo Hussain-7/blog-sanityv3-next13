@@ -39,5 +39,3 @@ export const myTheme = buildLegacyTheme({
   "--main-navigation-color--inverted": props["--my-white"],
   "--focus-color": props["--papafam-brand"],
 });
-
-// Continue from 38:54
