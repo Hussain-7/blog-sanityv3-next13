@@ -1,7 +1,7 @@
 import { ArrowUpRightIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import React from "react";
-import urlFor from "../lib/urlFor";
+import urlFor from "../../lib/urlFor";
 import BlogCard from "./BlogCard";
 type Props = {
   posts: Post[];

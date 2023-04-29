@@ -1,5 +1,5 @@
-import Banner from "../../components/Banner";
-import Header from "../../components/Header";
+import Banner from "../../components/blogs/Banner";
+import Header from "../../components/blogs/Header";
 import "../../styles/globals.css";
 
 export default function RootLayout({
