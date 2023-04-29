@@ -3,7 +3,7 @@ type Props = {
   posts: Post[];
 };
 const BlogList = ({ posts }: Props) => {
-  console.log("posts", posts);
+  console.log("posts", posts.length);
   return <div>BlogList</div>;
 };
 

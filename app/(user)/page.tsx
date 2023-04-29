@@ -22,7 +22,6 @@ const HomePage = async ({ props }: any) => {
           </div>
         }
       >
-        {/* list of blogs */}
         <PreviewBlogList query={query} />
       </PreviewSuspense>
     );
