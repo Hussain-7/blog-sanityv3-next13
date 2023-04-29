@@ -5,22 +5,8 @@ import PreviewSuspense from "../../components/preview/PreviewSuspense";
 import BlogList from "../../components/blogs/BlogList";
 import PreviewBlogList from "../../components/preview/PreviewBlogList";
 
-// export const revalidate = 30;
 
-// export async function getStaticProps() {
-//   const query = groq`*[_type == "post"]{
-//     ...,
-//     author->,
-//     categories[]->,
-//   } | order(_createdAt desc)`;
-//   const posts = await client.fetch(query);
-
-//   return {
-//     props: {
-//       fetchedPosts: posts,
-//     },
-//   };
-// }
+export const revalidate = 30;
 
 const HomePage = async ({ fetchedPosts }: { fetchedPosts: Post[] }) => {
   console.log("fetchedPosts", fetchedPosts);
