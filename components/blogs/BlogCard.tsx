@@ -9,7 +9,7 @@ type Props = {
 };
 const BlogCard = ({ post }: Props) => {
   return (
-    <ClideSideRoute key={post._id} route={`/blog/${post.slug.current}`}>
+    <ClideSideRoute key={post._id} route={`/post/${post.slug.current}`}>
       {" "}
       <div>
         <div className="flex flex-col group cursor-pointer">
