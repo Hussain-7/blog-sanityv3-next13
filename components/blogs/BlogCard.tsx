@@ -18,19 +18,21 @@ const BlogCard = ({ post }: Props) => {
          transition-transform duration-200 ease-out"
           >
             {" "}
-            <Image
-              className="object-cover object-left lg:object-center"
-              src={urlFor(post.mainImage).url()}
-              alt={post.author.name}
-              fill
-            />
+            {post.mainImage && (
+              <Image
+                className="object-cover object-left lg:object-center"
+                src={urlFor(post.mainImage)?.url()}
+                alt={post.author.name}
+                fill
+              />
+            )}
             <div
               className="absolute bottom-0 w-full bg-opacity-20 
     bg-black backdrop-blur-lg rounded drop-shadow-lg 
     text-white p-5 flex justify-between"
             >
               <div>
-                <p className="font-bold">{post.title}</p>
+                <p className="font-bold text-sm sm:text-lg">{post.title}</p>
                 <p>
                   {new Date(post._createdAt).toLocaleDateString("en-US", {
                     day: "numeric",
@@ -54,7 +56,9 @@ const BlogCard = ({ post }: Props) => {
             </div>
           </div>
           <div className="mt-5 flex-1">
-            <p className="underline text-lg font-bold">{post.title}</p>
+            <p className="underline text-sm sm:text-lg font-bold">
+              {post.title}
+            </p>
             <p className="line-clamp-2 text-gray-500">{post.description}</p>
           </div>
           <p className="mt-5 font-bold flex items-center group-hover:underline">
